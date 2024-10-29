@@ -1,68 +1,44 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const menuBtnIcon = menuBtn.querySelector("i");
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
+  menuBtn.addEventListener("click", (e) => {
+    navLinks.classList.toggle("open");
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-});
+    const isOpen = navLinks.classList.contains("open");
+    menuBtnIcon.setAttribute(
+      "class",
+      isOpen ? "ri-close-line" : "ri-menu-line"
+    );
+  });
 
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
+  navLinks.addEventListener("click", (e) => {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-line");
+  });
 
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-image");
+  const closeModal = document.getElementById("close-modal");
 
-ScrollReveal().reveal(".header__container p", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".header__container h1", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".header__container .header__flex", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
+  const projectCards = document.querySelectorAll(".project__card img");
 
-const faq = document.querySelector(".faq__grid");
+  projectCards.forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex"; // Show the modal
+      modalImg.src = img.src; // Set the modal image source
+    });
+  });
 
-faq.addEventListener("click", (e) => {
-  const target = e.target;
-  const faqCard = target.closest(".faq__card");
-  if (target.classList.contains("ri-arrow-down-s-line")) {
-    if (faqCard.classList.contains("active")) {
-      faqCard.classList.remove("active");
-    } else {
-      Array.from(faq.children).forEach((item) => {
-        item.classList.remove("active");
-      });
-      faqCard.classList.add("active");
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none"; // Hide the modal
+  });
+
+  // Close modal when clicking anywhere outside of the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none"; // Hide the modal
     }
-  }
-});
-
-ScrollReveal().reveal(".faq__image img", {
-  ...scrollRevealOption,
-  origin: "left",
-});
-
-ScrollReveal().reveal(".article__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
+  });
 });
