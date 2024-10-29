@@ -802,3 +802,119 @@ nav {
     gap: 2rem;
   }
 }
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .header__container h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .about__card h4 {
+    font-size: 1.25rem;
+  }
+
+  .faq__header h4 {
+    font-size: 1rem;
+  }
+
+  .client__card span {
+    font-size: 3rem;
+  }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header__container h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .about__card h4 {
+    font-size: 1.5rem;
+  }
+
+  .faq__header h4 {
+    font-size: 1.1rem;
+  }
+
+  .client__card span {
+    font-size: 3.5rem;
+  }
+
+  .nav__links {
+    padding: 1rem;
+  }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header__container h1 {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
+
+  .about__card h4 {
+    font-size: 1.75rem;
+  }
+
+  .faq__header h4 {
+    font-size: 1.2rem;
+  }
+
+  .client__card span {
+    font-size: 4rem;
+  }
+
+  .article__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (larger desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header__container h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .about__card h4 {
+    font-size: 2rem;
+  }
+
+  .faq__header h4 {
+    font-size: 1.3rem;
+  }
+
+  .client__card span {
+    font-size: 4.5rem;
+  }
+
+  .article__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .section__container {
+    padding: 6rem 1rem;
+  }
+
+  .header__container h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+  .about__card h4 {
+    font-size: 2.5rem;
+  }
+
+  .faq__header h4 {
+    font-size: 1.5rem;
+  }
+
+  .client__card span {
+    font-size: 5rem;
+  }
+}
